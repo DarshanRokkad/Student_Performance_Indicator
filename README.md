@@ -8,7 +8,9 @@ It is a student's mathematics subject marks prediction.
 
 ```
 ├── .gitignore
-└── README.md
+├── README.md
+├── requirements.txt
+└── setup.py
 ```
 
 ---
