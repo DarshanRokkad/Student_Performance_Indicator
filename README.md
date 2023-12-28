@@ -25,7 +25,8 @@ It is a student preformance indicator project implemented in production level.
 │   │   ├── data_ingestion.py             <-- module which reads data from different data source and do train test split
 │   │   │                                     then save raw data, train data and test data inside artifact folder 
 │   │   │
-│   │   ├── transformation.py
+│   │   ├── data_transformation.py        <-- module which takes training and test dataset and then do feature engineering
+│   │   │                                     then save preprocessor as pickle file inside artifact folder 
 │   │   │
 │   │   └── model_trainer.py
 │   │
