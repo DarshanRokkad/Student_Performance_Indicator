@@ -1,5 +1,5 @@
 import sys
-import logging
+from src.logger import logging
 # sys is used to access the variable and functions that describe the of the running python environment.
 
 
@@ -19,6 +19,8 @@ class CustomException(Exception):
     def __str__(self):
         return self.error_message
     
+
+# added below code just to test file
 # if __name__ == '__main__':
 #     try:
 #         a = 1/0
