@@ -1,6 +1,7 @@
 # developer ignore files - added by developer
 artifacts/
 notebook/catboost_info/
+catboost_info/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
