@@ -20,7 +20,7 @@ def get_requirements(file_path:str)->List[str]:
 
 
 setup(
-    name='student_marks_prediction',
+    name='marks_prediction_project_package',
     version='0.0.1',
     author='DarshanRM',
     author_email='darshanrokkad2003@gmail.com',
