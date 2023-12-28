@@ -1,12 +1,22 @@
-<h1 align="center">Mathematics Marks Prediction <br>Production Level Application</h1>
+<h1 align="center">Student Performance Indicator <br>Production Level Application</h1>
 
-It is a student's mathematics subject marks prediction.
+It is a student preformance indicator project.
 
 ---
 
 <h3 align="center">Project Organisation</h3>  
 
 ```
+│   
+├── logs
+│   
+├── notebook
+│   │
+│   ├── eda.ipynb
+│   │
+│   ├── train.ipynb
+│   │
+│   └── data
 │   
 ├── src
 │   │
