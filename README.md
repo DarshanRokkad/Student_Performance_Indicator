@@ -10,11 +10,11 @@ It is a student preformance indicator project.
 │  
 ├── notebook
 │   │
-│   ├── eda.ipynb
+│   ├── eda.ipynb                         <-- a jupyter notebook where eda is performed for the given dataset
 │   │
-│   ├── train.ipynb
+│   ├── train.ipynb                       <-- a jupyter notebook where model training is done initially for the given dataset
 │   │
-│   └── data
+│   └── data                              <-- contains the data required for project
 │   
 ├── src
 │   │
@@ -22,7 +22,8 @@ It is a student preformance indicator project.
 │   │   │
 │   │   ├── __init__.py
 │   │   │
-│   │   ├── data_ingestion.py
+│   │   ├── data_ingestion.py             <-- module which reads data from different data source and do train test split
+│   │   │                                     then save raw data, train data and test data inside artifact folder 
 │   │   │
 │   │   ├── transformation.py
 │   │   │
@@ -38,19 +39,20 @@ It is a student preformance indicator project.
 │   │
 │   ├── __init__.py
 │   │
-│   ├── exception.py
+│   ├── exception.py                     <-- module to display the custom exception
 │   │
-│   ├── logger.py
+│   ├── logger.py                        <-- module to create log folder for each execution and log the events whenever required.
 │   │
 │   └── utils.py
 │
-├── .gitignore
+├── .gitignore                           <-- used to ignore the unwanted file and folders
 │
-├── README.md
+├── README.md                            <-- used to display the information about the project
 │
-├── requirements.txt
+├── requirements.txt                     <-- text file which contain the dependencies/packages used project 
+│                                            also to trigger the setup.py module
 │
-└── setup.py
+└── setup.py                             <-- module to package our project
 ```
 
 ---
