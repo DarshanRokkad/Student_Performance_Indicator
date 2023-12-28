@@ -28,8 +28,8 @@ class DataIngestion:
 
             logging.info('Train test split initiated')
             train_set, test_set = train_test_split(df, test_size = 0.2, random_state = 42)
-            df.to_csv(self.ingestion_config.train_data_path, index = False, header = True)   # saving train data
-            df.to_csv(self.ingestion_config.test_data_path, index = False, header = True)    # saving test data
+            train_set.to_csv(self.ingestion_config.train_data_path, index = False, header = True)   # saving train data
+            test_set.to_csv(self.ingestion_config.test_data_path, index = False, header = True)    # saving test data
 
             logging.info('Data ingestion completed')
             return (self.ingestion_config.train_data_path, self.ingestion_config.test_data_path)   # this will be used in data transformation
