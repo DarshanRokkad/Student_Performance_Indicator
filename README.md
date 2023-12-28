@@ -1,6 +1,6 @@
 <h1 align="center">Student Performance Indicator <br>Production Level Application</h1>
 
-It is a student preformance indicator project.
+It is a student preformance indicator project implemented in production level.
 
 ---
 
@@ -54,5 +54,21 @@ It is a student preformance indicator project.
 │
 └── setup.py                             <-- module to package our project
 ```
+
+---
+
+<h3 align="center">Best Practises Implemented</h3>
+
+1. Moduler Programming.
+2. Exception Handling.
+3. Logging.
+4. Comments.
+5. Function Documentation (docstring).
+
+---
+
+<h3 align="center">Steps followed to create the project</h3>
+
+1. Setup github repository.
 
 ---
