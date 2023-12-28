@@ -44,7 +44,7 @@ It is a student preformance indicator project implemented in production level.
 │   │
 │   ├── logger.py                        <-- module to create log folder for each execution and log the events whenever required.
 │   │
-│   └── utils.py
+│   └── utils.py                         <-- module to which contians functions that are commonly used.
 │
 ├── .gitignore                           <-- used to ignore the unwanted file and folders
 │
