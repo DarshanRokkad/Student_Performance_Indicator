@@ -8,6 +8,7 @@ from sklearn.model_selection import train_test_split
 from dataclasses import dataclass       # used to create class variable without using constructor
 
 from src.components.data_transformation import DataTransformation
+from src.components.model_trainer import ModelTrainer
 
 
 @dataclass
@@ -49,3 +50,8 @@ if __name__ == '__main__':
     # checking data transformation
     data_transformation = DataTransformation()
     train_arr, test_arr, preprocessor_object_file_path = data_transformation.initiate_data_transformation(train_data_path, test_data_path)
+
+    # checking model trainer
+    model_trainer = ModelTrainer()
+    r2 = model_trainer.initiate_model_trainer(train_arr, test_arr)
+    print(r2)
