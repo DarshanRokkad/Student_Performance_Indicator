@@ -1,4 +1,4 @@
-<h1 align="center">Student Performance Indicator <br>Production Level Application</h1>
+<h1 align="center">🎓Student Performance Indicator📊 <br>Production Level Application🚀</h1>
 
 It is a student preformance indicator project implemented in production level.
 
