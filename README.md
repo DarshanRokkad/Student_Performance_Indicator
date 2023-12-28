@@ -7,9 +7,7 @@ It is a student preformance indicator project.
 <h3 align="center">Project Organisation</h3>  
 
 ```
-│   
-├── logs
-│   
+│  
 ├── notebook
 │   │
 │   ├── eda.ipynb
