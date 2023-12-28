@@ -7,6 +7,9 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass       # used to create class variable without using constructor
 
+from src.components.data_transformation import DataTransformation
+
+
 @dataclass
 class DataIngestionConfig:
     train_data_path:str = os.path.join('artifacts', 'train.csv')
@@ -39,5 +42,10 @@ class DataIngestion:
 
 
 if __name__ == '__main__':
+    # checking data ingestion
     obj = DataIngestion()
-    obj.initiate_data_ingestion()
+    train_data_path, test_data_path = obj.initiate_data_ingestion()
+    
+    # checking data transformation
+    data_transformation = DataTransformation()
+    train_arr, test_arr, preprocessor_object_file_path = data_transformation.initiate_data_transformation(train_data_path, test_data_path)
