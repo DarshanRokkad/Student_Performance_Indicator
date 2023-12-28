@@ -2,6 +2,7 @@
 artifacts/
 notebook/catboost_info/
 catboost_info/
+*tempCodeRunnerFile.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
