@@ -86,20 +86,20 @@ class DataTransformation:
             logging.info('Sucessfully read train and test data')
 
             # separating independent and dependent feature in both train and test dataframe
-            output_feature = 'math_score'
-            input_feature_train_df = train_df.drop(columns = [output_feature], axis = 1)
-            output_feature_train_df = train_df[output_feature]
-            input_feature_test_df = test_df.drop(columns = [output_feature], axis = 1)
-            output_feature_test_df = test_df[output_feature]
+            dependent_feature = 'math_score'
+            independent_feature_train_df = train_df.drop(columns = [dependent_feature], axis = 1)
+            dependent_feature_train_df = train_df[dependent_feature]
+            independent_feature_test_df = test_df.drop(columns = [dependent_feature], axis = 1)
+            dependent_feature_test_df = test_df[dependent_feature]
 
             logging.info('Obtaining preprocessing data transformer object and applying on training and testing dataframe')
 
             # applying preprocessing on our data
             preprocesser_object = self.get_data_transformer_object()
-            input_feature_train_arr = preprocesser_object.fit_transform(input_feature_train_df)
-            input_feature_test_arr = preprocesser_object.transform(input_feature_test_df)
-            train_arr = np.c_[input_feature_train_arr, np.array(output_feature_train_df)]           # concatinate data transformed training feature with output feature 
-            test_arr = np.c_[input_feature_test_arr, np.array(output_feature_test_df)]
+            input_feature_train_arr = preprocesser_object.fit_transform(independent_feature_train_df)
+            input_feature_test_arr = preprocesser_object.transform(independent_feature_test_df)
+            train_arr = np.c_[input_feature_train_arr, np.array(dependent_feature_train_df)]           # concatinate data transformed training feature with output feature 
+            test_arr = np.c_[input_feature_test_arr, np.array(dependent_feature_test_df)]
 
             logging.info('Completed preprocessing on training and test data')
             
