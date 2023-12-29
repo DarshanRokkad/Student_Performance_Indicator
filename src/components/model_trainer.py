@@ -38,7 +38,6 @@ class ModelTrainer:
             # creating models dictionary to create all object
             models = {
                 'Linear Regressor' : LinearRegression(), 
-                'K-Neighbors Regressor' : KNeighborsRegressor(),
                 'Decision Tree Regressor' : DecisionTreeRegressor(),
                 'Random Forest Regressor' : RandomForestRegressor(),
                 'AdaBoost Regressor' : AdaBoostRegressor(),
@@ -48,12 +47,51 @@ class ModelTrainer:
             }
 
             logging.info('All models Created')
+
+            # hyperparameter turning
+            parameters = {
+                "Linear Regressor" : {},
+                "Decision Tree Regressor": {
+                    'criterion':['squared_error', 'friedman_mse', 'absolute_error', 'poisson'],
+                    # 'splitter':['best','random'],
+                    # 'max_features':['sqrt','log2'],
+                },
+                "Random Forest Regressor":{
+                    # 'criterion':['squared_error', 'friedman_mse', 'absolute_error', 'poisson'],
+                 
+                    # 'max_features':['sqrt','log2',None],
+                    'n_estimators': [8,16,32,64,128,256]
+                },
+                "AdaBoost Regressor":{
+                    'learning_rate':[.1,.01,0.5,.001],
+                    # 'loss':['linear','square','exponential'],
+                    'n_estimators': [8,16,32,64,128,256]
+                },
+                "Gradient Boosting Regressor":{
+                    # 'loss':['squared_error', 'huber', 'absolute_error', 'quantile'],
+                    'learning_rate':[.1,.01,.05,.001],
+                    'subsample':[0.6,0.7,0.75,0.8,0.85,0.9],
+                    # 'criterion':['squared_error', 'friedman_mse'],
+                    # 'max_features':['auto','sqrt','log2'],
+                    'n_estimators': [8,16,32,64,128,256]
+                },
+                # "XG Boost Regressor":{
+                #     'learning_rate':[.1,.01,.05,.001],
+                #     'n_estimators': [8,16,32,64,128,256]
+                # },
+                "CatBoosting Regressor":{
+                    'depth': [6,8,10],
+                    'learning_rate': [0.01, 0.05, 0.1],
+                    'iterations': [30, 50, 100]
+                }
+            }
             
             # creating model report which is implemented in utils.py
-            models_report:dict = evaluate_models(x_train, x_test, y_train, y_test, models)
-            # getting best model score and best model name
+            models_report:dict = evaluate_models(x_train, x_test, y_train, y_test, models, parameters)
+            
             logging.info(f'{models_report}')
             
+            # getting best model score and best model name
             max_model_score = max(list(models_report.values()))
             best_model_name = [model_name for model_name in list(models_report.keys()) if models_report[model_name] == max_model_score][0]
             best_model = models[best_model_name]
