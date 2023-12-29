@@ -22,9 +22,12 @@ class PredictPipeline:
             logging.info('loaded preprocessor and model object')
 
             scaled_data = preprocessor.transform(features)
+
+            logging.info(f'Scaled input data')
+
             pred = model.predict(scaled_data)
 
-            logging.info(f'Scaled input data and did prediction output is {pred}')
+            logging.info(f'Predicted output and output is {pred}')
 
             return pred
         
