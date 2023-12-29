@@ -1,5 +1,9 @@
 <h1 align="center">🎓Student Performance Indicator📊<br><br>Production Level Application🚀<br><br></h1>
 
+<p align="center"><img src="images/image-1.png" width="700" height="450"></p> 
+
+---
+
 It is a student preformance indicator project implemented in production level.
 
 ---
