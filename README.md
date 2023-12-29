@@ -36,7 +36,8 @@ It is a student preformance indicator project implemented in production level.
 │   │   │
 │   │   ├── __init__.py
 │   │   │
-│   │   ├── predict_pipeline.py
+│   │   ├── predict_pipeline.py          <-- module takes the input data given by user as dataframe through flask web application and returns the prediction
+│   │   │                                    and also takes data comes from flask application and return data as dataframe
 │   │   │
 │   │   └── train_pipeline.py
 │   │
