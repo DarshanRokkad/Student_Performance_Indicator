@@ -56,6 +56,8 @@ It is a student preformance indicator project implemented in production level.
 │
 ├── .gitignore                           <-- used to ignore the unwanted file and folders
 │
+├── app.py                               <-- flask web application to take input from user and render output
+│
 ├── README.md                            <-- used to display the information about the project
 │
 ├── requirements.txt                     <-- text file which contain the dependencies/packages used project 
