@@ -28,7 +28,9 @@ It is a student preformance indicator project implemented in production level.
 │   │   ├── data_transformation.py        <-- module which takes training and test dataset and then do feature engineering
 │   │   │                                     then save preprocessor as pickle file inside artifact folder 
 │   │   │
-│   │   └── model_trainer.py
+│   │   └── model_trainer.py              <-- module which takes preprocessed training and test data and 
+│   │                                         this data is used to train different models and selects best model 
+│   │                                         it also perform hyperparameter tuning 
 │   │
 │   ├── pipeline
 │   │   │
@@ -45,6 +47,12 @@ It is a student preformance indicator project implemented in production level.
 │   ├── logger.py                        <-- module to create log folder for each execution and log the events whenever required.
 │   │
 │   └── utils.py                         <-- module to which contians functions that are commonly used.
+│   
+├── static
+│   │
+│   └── css                              <-- contains all css files
+│   
+├── templates                            <-- contains all html files
 │
 ├── .gitignore                           <-- used to ignore the unwanted file and folders
 │
