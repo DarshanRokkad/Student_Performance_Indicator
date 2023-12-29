@@ -6,35 +6,6 @@ from src.logger import logging
 from src.utils import load_object
 
 
-class PredictPipeline:
-    def __init__(self):
-        pass
-
-    def predict(self, features):
-        try: 
-            logging.info('Prediction started')
-
-            preproessor_path = 'artifacts/preprocessor.pkl'
-            preprocessor = load_object(preproessor_path)
-            model_path = 'artifacts/model.pkl'
-            model = load_object(model_path)
-
-            logging.info('loaded preprocessor and model object')
-
-            scaled_data = preprocessor.transform(features)
-
-            logging.info(f'Scaled input data')
-
-            pred = model.predict(scaled_data)
-
-            logging.info(f'Predicted output and output is {pred}')
-
-            return pred
-        
-        except Exception as e:
-            raise CustomException(e, sys)
-
-
 class CustomData:
     def __init__(
             self, 
@@ -71,6 +42,35 @@ class CustomData:
             logging.info('Converted input data into DataFrame')
 
             return df
+        
+        except Exception as e:
+            raise CustomException(e, sys)
+
+
+class PredictPipeline:
+    def __init__(self):
+        pass
+
+    def predict(self, features):
+        try: 
+            logging.info('Prediction started')
+
+            preproessor_path = 'artifacts/preprocessor.pkl'
+            preprocessor = load_object(preproessor_path)
+            model_path = 'artifacts/model.pkl'
+            model = load_object(model_path)
+
+            logging.info('loaded preprocessor and model object')
+
+            scaled_data = preprocessor.transform(features)
+
+            logging.info(f'Scaled input data')
+
+            pred = model.predict(scaled_data)
+
+            logging.info(f'Predicted output and output is {pred}')
+
+            return pred
         
         except Exception as e:
             raise CustomException(e, sys)
