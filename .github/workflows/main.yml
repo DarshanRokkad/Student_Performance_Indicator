@@ -13,15 +13,15 @@ permissions:
 
 jobs:
   integration:
-      name: Continuous Integration
-      runs-on: ubuntu-latest
-      steps:
-          - name: Checkout Code
-            uses: actions/checkout@v3
-          - name: Lint Code
-            run: echo "Linting repository"
-          - name: Run Unit Tests
-            run: echo "Running unit tests"
+    name: Continuous Integration
+    runs-on: ubuntu-latest
+    steps:
+        - name: Checkout Code
+          uses: actions/checkout@v3
+        - name: Lint Code
+          run: echo "Linting repository"
+        - name: Run Unit Tests
+          run: echo "Running unit tests"
 
   build-and-push-ecr-image:
     name: Continuous Delivery
