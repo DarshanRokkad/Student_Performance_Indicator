@@ -1,5 +1,4 @@
 # developer ignore files - added by developer
-artifacts/
 notebook/catboost_info/
 catboost_info/
 *tempCodeRunnerFile.py
