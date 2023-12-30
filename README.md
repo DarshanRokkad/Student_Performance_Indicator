@@ -12,6 +12,21 @@ It is a student preformance indicator project implemented in production level.
 
 ```
 │  
+├── .ebextensions
+│   │
+│   └── python.config                     <-- we add python configuration to deploy on aws elastic bean stalk
+│  
+├── .github
+│   │
+│   └── workflow                          
+│       │
+│       └── main.yml                      <-- contains CI-CD pipeline using github actions
+│  
+├── artificats                            <-- Contains dataset(train, test and raw) bought in data ingestion and pickle files(preprocessor and model) created during data transformation and model training
+│                                             pickle files(preprocessor and model) created during data transformation and model training
+│  
+├── images                                <-- contains images used in readme file
+│  
 ├── notebook
 │   │
 │   ├── eda.ipynb                         <-- a jupyter notebook where eda is performed for the given dataset
@@ -73,6 +88,28 @@ It is a student preformance indicator project implemented in production level.
 
 ---
 
+<h3 align="center">Steps followed to create the project</h3>
+
+1. Create a virtual envirnoment in local device.
+2. Setup github repository and clone it to virtual environment.
+3. Create 'requirements.txt' file and add common requirements.
+4. Create 'setup.py' file and write code to package the project.
+5. Create project structure i.e 'src' folder.
+6. Write custom exception code in 'exception.py'.
+7. Write logging code in 'logger.py'.
+8. Understanding problem statement, performing eda and train model in jupyter notebook i.e in 'notebook' folder.
+9. Data ingestion 'data_ingestion.py' code to read data from the data source and do train test split and store datasets in artifacts folder use utils to common project function.
+10. Data transformation 'data_transformation.py' take trian and test data perform data preprocessing and creates 'preprocessor.pkl' in artifacts folder.
+11. Model training and evaluation 'model_trainer.py' and select best model.
+12. Add hyperparameter tuning in 'evaluate_model.py' present in utils and creates 'model.pkl' file.
+13. Write Prediction pipeline code 'predict_pipeline.py' which takes data coming from user and return prediction.
+14. Create a flask web app 'application.py' to take data from user and render prediction use html page and add styling for it.
+15. Create an API in 'application.py' and test api using postman.
+16. Create '.ebextensions' folder and add python configuration to deploy on AWS EBS(elastic beanstalk).
+17. Create '.github' folder and write workflow in 'main.yml' to create a CI-CD pipeline using github actions. 
+
+---
+
 <h3 align="center">Best Practises Implemented</h3>
 
 1. Moduler Programming.
@@ -80,11 +117,6 @@ It is a student preformance indicator project implemented in production level.
 3. Logging.
 4. Comments.
 5. Function Documentation (docstring).
-
----
-
-<h3 align="center">Steps followed to create the project</h3>
-
-1. Setup github repository.
+6. Organizing Code.
 
 ---
