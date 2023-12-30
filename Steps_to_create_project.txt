@@ -130,6 +130,8 @@ Steps:
 3. Create "static/css/style.css" file and add styling to the html page.
 4. Create a flask web app that take data from user and returns the prediction results.
 5. Add the route which we can use to test api.
+6. To check flask application.
+	- run 'python application.py' in virtual envirnoment terminal.
 
 
 		   ___Part - 9__
@@ -149,19 +151,22 @@ Agenda:
 
 
 		   ___Part - 11__
+NOTE: folder '.ebextensions' is not required while deploying using aws ec2 and ecr. 
+
 Agenda:
 1. Deployment of project as a docker images in aws ec2 instance by deploying docker image to aws ecr.
 2. Automating integration and deployment using using github actions by adding workflow to project.
 
 Steps:
 1. Write "Dockerfile" and build the application.
-	- cmd -> "docker build -t student_perfomance ." - to build docker image.
+	- cmd -> "docker build -t student_perfomance ." - to build docker image and check image is working properly in local machine.
 2. Create github workflow in "main.yml" file
 	- Implement CI-CD pipeline using github actions.
 3. Create a iam user.
-	- add '' and '' policies.
+	- add "AmazonEC2ContainerRegistryFullAccess" and "AmazonEC2FullAccess" policies.
 4. Create a repositry ECR.
-5. Create a EC2 instance of required docker size and install the required dependencies after connecting to EC2 instance.
+5. Create a EC2 instance of required docker size.
+6. Connect to EC2 instance and install required dependencies in terminal.
 	- cmd -> ""
 
 
