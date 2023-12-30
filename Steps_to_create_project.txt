@@ -1,0 +1,173 @@
+-------------- Industry Ready Machine Learning Project --------------
+
+			
+		   ___Part - 1___
+Agenda:
+1. Creation Github repository.
+	- Adding readme.md and .gitignore file.
+2. Creation of requirements.txt
+3. Writing setup.py file.
+
+Steps:
+1. Github Repositry Creation.
+	- cmd -> "code ." to open vs code from particular folder.
+2. Create and activate a virtual envirnoment.
+	- cmd -> "conda create -p venv python==3.8 -y" to create virtual environment.
+	- make sure that you have conda -> "conda --version" if conda is not there then install.
+	- cmd -> "conda activate venv/" to activate the created virtual environment.
+3. Clone the github repository in local machine.
+	- link you github account to local machine
+		- "git config --global user.name '<user name>'"
+		- "git config --global user.email <email>"
+	1. cmd -> "git init"
+	2. cmd -> "git remote add origin <git repo link>"
+	3. Create "README.md" to write about projec.
+	4. cmd -> "git add <file name>" to track the file.
+	5. cmd -> "git commit -m '<commit msg>'" to add file to staging area.
+	6. cmd -> "git push -u origin master" to push code to github.
+	7. Create ".gitignore" to ignore unwanted files and folders in github.
+	8. cmd -> "git pull -u origin master" to pull change made directly in github.
+4. Create "requirements.txt" and add all the dependencies.
+	- add "-e ." used to trigger "setup.py"
+5. Create "setup.py" which will create our project as package.
+	- create a function which will return list which contain all the package name present in requirements.txt but we have to remove "-e ." as it is used to trigger setup.py file.
+	- to check this: cmd -> "pip install requirements.txt"
+6. Create "src" folder which contain our PROJECT CODE and inside that create "__init__.py" which will be contain code.
+
+
+		   ___Part - 2__
+Agenda:
+1. Create project folder structure.
+2. Add exception handling code.
+3. Add logging code.
+
+Steps:
+1. Now, Create the project folder structure by creating "src" folder.
+2. Create a "components" folder inside "src" folder.
+	- __init__.py
+	- data_ingestion.py
+	- data_transformatino.py
+	- model_trainer.py
+3. Create a "pipeline" folder inside "src" and add files.
+	- __init__.py
+	- train_pipeline.py
+	- predict_pipeline.py
+4. Add the following files into "src" folder.
+	- __init__.py
+	- exception.py
+	- logger.py
+	- utils.py
+5. Add exception handling inside "exception.py" using sys module and write custom exception module.
+6. Add logging inside "logger.py" using logging module.
+- for big project even more file will be added inside the "components" folder such as data validation, model evaluation.
+
+
+		   ___Part - 3__
+Agenda:
+1. Understanding problem Statement.
+2. Performing EDA in jupyter notebook.
+3. Model trianing in jupyter notebook.
+	- Doing feature engineering using column_transform
+
+Steps:
+1. Create "notebook" folder then add the following files.
+	- Create "data" folder contains dataset.
+	- Perform eda.
+	- Perform model training.
+
+
+		   ___Part - 4__
+Agenda:
+1. Writing module for data ingestion which read data and do train test split.
+
+Steps:
+1. Write code in "data ingestion.py" to read data.
+	- split that dataframe into "train" and "test" set and save in "artifacts" folder.
+
+
+		   ___Part - 5__
+Agenda:
+1. Writing module for data transformation which takes train data and test data then split them independent and dependent features 
+
+Steps:
+1. Write code in "data_transformation.py" to do data transformation.
+	- Here, we will handle missing values, duplicate values and we will do standard scaling and data encoding.
+	- using column transformer to combine the numerical and categorical pipeline.
+
+
+		   ___Part - 6__
+Agenda:
+1. Writing module for model training where model is trained with differenct algorithm then select best accuracy model then save model.
+
+Steps:
+1. Write Code in "model_trainer.py" to do model training and evaluation.
+	- add "evaluate_models" function in "utils.py"
+
+
+		   ___Part - 7__
+Agenda:
+1. Add hyper tuning parameters inside "model_trainer.py" and done hyperparameter tuning inside evalutate model function present inside "utils.py"
+
+Steps:
+1. Add hypertuning parameters in "model_trianer.py" as dictionary and send to evaluate_model function present in "utils.py".
+2. Perform hyper parameter tuning inside utils.py module using parameters.
+
+
+		   ___Part - 8__
+Agenda:
+1. Create Flask web application "app.py".
+	- Creating required html pages.
+	- Creating required css pages.
+2. Create prediction pipeline "predict_prediction.py" 
+	- which customizes the data and also returns data as dataframe.
+	- which take data given by the user and returns the prediction.
+
+Steps:
+1. Create "predict_pipeline.py" and add 2 class.
+	- 1st class returns returns data as dataframe.
+	- 2nd class take input data as dataframe and returns the prediction.
+2. Create "templates/home.html" file and create a basic form that takes input.
+3. Create "static/css/style.css" file and add styling to the html page.
+4. Create a flask web app that take data from user and returns the prediction results.
+5. Add the route which we can use to test api.
+
+
+		   ___Part - 9__
+Agenda:
+1. Deployment of project on aws using elastic beanstalk.
+
+Steps:
+1. Create ".ebextensions" folder and add "python.config" file.
+2. Create IAM role.
+3. Create elasticbean stack service.
+4. Create Codepipeline which connect code present in github and elasticbean stack service.
+
+
+		   ___Part - 10__
+Agenda:
+1. Deployment of project on Azure using "web app" service
+
+
+		   ___Part - 11__
+Agenda:
+1. Deployment of project as a docker images in aws ec2 instance by deploying docker image to aws ecr.
+2. Automating integration and deployment using using github actions by adding workflow to project.
+
+Steps:
+1. Write "Dockerfile" and build the application.
+	- cmd -> "docker build -t student_perfomance ." - to build docker image.
+2. Create github workflow in "main.yml" file
+	- Implement CI-CD pipeline using github actions.
+3. Create a iam user.
+	- add '' and '' policies.
+4. Create a repositry ECR.
+5. Create a EC2 instance of required docker size and install the required dependencies after connecting to EC2 instance.
+	- cmd -> ""
+
+
+
+
+
+
+
+
