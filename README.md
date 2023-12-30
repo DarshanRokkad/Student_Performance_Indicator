@@ -20,7 +20,7 @@ It is a student preformance indicator project implemented in production level.
 │   │
 │   └── workflow                          
 │       │
-│       └── main.yml                      <-- contains CI-CD pipeline using github actions
+│       └── main.yml                      <-- contains yml code to create CI-CD pipeline for github actions
 │  
 ├── artificats                            <-- Contains dataset(train, test and raw) bought in data ingestion and pickle files(preprocessor and model) created during data transformation and model training
 │                                             pickle files(preprocessor and model) created during data transformation and model training
