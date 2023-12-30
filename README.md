@@ -76,7 +76,9 @@ It is a student preformance indicator project implemented in production level.
 │
 ├── .gitignore                           <-- used to ignore the unwanted file and folders
 │
-├── app.py                               <-- flask web application to take input from user and render output
+├── application.py                       <-- flask web application to take input from user and render output
+│
+├── Dockerfile                           <-- Contains code to build and run a docker image
 │
 ├── README.md                            <-- used to display the information about the project
 │
