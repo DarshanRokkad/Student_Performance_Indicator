@@ -154,12 +154,12 @@ Agenda:
 NOTE: folder '.ebextensions' is not required while deploying using aws ec2 and ecr. 
 
 Agenda:
-1. Deployment of project as a docker images in aws ec2 instance by deploying docker image to aws ecr.
+1. Deployment of project as a docker images in aws ec2 instance by creating docker image inside aws ecr.
 2. Automating integration and deployment using using github actions by adding workflow to project.
 
 Steps:
 1. Write "Dockerfile" and build the application.
-	- cmd -> "docker build -t student_perfomance ." - to build docker image and check image is working properly in local machine.
+	- cmd -> "docker build -t student_perfomance ." to build docker image and check image is working properly in local machine.
 2. Create github workflow in "main.yml" file
 	- Implement CI-CD pipeline using github actions.
 3. Create a iam user.
@@ -170,12 +170,44 @@ Steps:
 	- optional:
 	- cmd -> "sudo apt-get update -y"
 	- cmd -> "sudo apt-get upgrade"
-	- Required:
-	- cmd -> "curl -fsSL https://get.docker.com -o get-docker.sh"
-	- cmd -> "sudo sh get-docker.sh"
+	- Required: to install necessary package that is required for docker.
+	- cmd -> "curl -fsSL https://get.docker.com -o get-docker.sh" 
+	- cmd -> "sudo sh get-docker.sh" 
 	- cmd -> "sudo usermod -aG docker ubuntu"
 	- cmd -> "newgrp docker"
-7. 
+	- to check docker is running cmd -> "docker --version"
+7. Set up app runner.
+	- go to github > settings in that page go to Actions > Runner.
+	- Create new self-hosted runner.
+	- select linux machine.
+	- copy the commands given and run them in ec2 instance terminal. 
+		- Below are the steps present there.
+		- Download
+		- Configure
+			- for name of runner group just click enter(means default).
+			- name of runner : "self-hosted"
+			- for additional labels also click enter.
+			- name of work folder also click enter.
+		- Using your self-hosted runner.
+	- go to github > settings in that page go to Actions > Runner we can see "self-hosted" app runner in idle status.
+	- go to github > settings in that page go to "Secrets and variables" > actions and add "5 keys".
+		1. AWS_ACCESS_KEY_ID
+		2. AWS_SECRET_ACCESS_KEY
+		3. AWS_REGION 
+		4. AWS_ECR_LOGIN_URI - paste the ecr uri but remove ecr repo name present at the end of link.
+		5. ECR_REPOSITORY_NAME - go to aws ecr and check the ecr repository created and give that name.
+8. Run Workflow.
+	- do some changes and commit it.
+	- go to "actions" tab we can see there a ci cd pipeline automatically starts.
+	- to open our web app
+		- go to aws ec2 instance and select our ec2 instance.
+		- click on "public ipv4 address".
+		- intially we will get error so we have to add security group.
+		- in same instance go to "security" and click on "security groups".
+		- now click on "inbound rules" and add "custom tcp" and port range as "8080" which is given in application.py and source is custom.
+		- then go back and refresh and copy ipv4 address.
+		- open new tab and paste ipv4 address and give port number.(ex: "http://3.83.159.89:8080")
+9. after finishing go to github remove "app runner" and also terminate ec2 instance and delete ecr repo and iam user.
 
 
 
