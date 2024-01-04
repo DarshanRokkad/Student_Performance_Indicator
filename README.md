@@ -8,6 +8,11 @@ It is a student preformance indicator project implemented in production level.
 
 ---
 
+<h3 align="center">Web Page with Sample Output<br></h3>
+<p align="center"><img src="images/image-3.png" width="700" height="400"></p> 
+
+---
+
 <h3 align="center">Project Organisation</h3>  
 
 ```
